@@ -1,0 +1,37 @@
+{
+  "name": "android-app",
+  "version": "1.0.0",
+  "description": "Android application node backend",
+  "main": "server/server.js",
+  "engines": {
+    "node": "8.4.0",
+    "npm": "5.3.0"
+  },
+  "presets": [
+    "es6"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "NODE_ENV=develop nodemon server/server.js",
+    "start": "node ./server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Drujininii/Node_Android.git"
+  },
+  "author": "Igor Drujinin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Drujininii/Node_Android/issues"
+  },
+  "homepage": "https://gitlab.com/Drujininii/Node_Android#README",
+  "devDependencies": {
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
+    "node-env-run": "^3.0.2",
+    "nodemon": "^1.17.3"
+  },
+  "dependencies": {
+    "pg-promise": "^8.2.2"
+  }
+}
