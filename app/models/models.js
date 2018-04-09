@@ -11,30 +11,7 @@ class Models {
     }
 
     getTomato(params) {
-        if (!params.n) {
-        return db.any(`
-            SELECT * FROM app_recipes
-            `)
-            .then(function (data) {
-                console.log("DATA:", data);
-                return data;
-            })
-            .catch(function (error) {
-                console.log("ERROR:", error);
-            });
-        } else {
-            return db.any(`
-            SELECT * FROM app_recipes
-            WHERE recipe_id = $1;
-            `, params.n)
-            .then(function (data) {
-                console.log("DATA:", data);
-                return data;
-            })
-            .catch(function (error) {
-                console.log("ERROR:", error);
-            });
-        }
+        return "1";
     }
 
 

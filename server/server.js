@@ -2,8 +2,8 @@
 
 const express = require('express');
 const morgan = require('morgan');
-// const Controller = require('../app/controllers/controllers');
-// const controller = new Controller();
+const Controller = require('../app/controllers/controllers');
+const controller = new Controller();
 const bodyParser = require('body-parser');
 
 
@@ -23,12 +23,12 @@ app.get('/favicon.ico', (req, resp) => {
     return 'favicon';
 })
 
-// app.all('*', async (req, resp) => {
-//     console.log(req.url);
-//     const response = await controller.handleReq(req);
-//     console.log('response', response);
-//     resp.send(response);
-// })
+app.all('*', async (req, resp) => {
+    console.log(req.url);
+    const response = await controller.handleReq(req);
+    console.log('response', response);
+    resp.send(response);
+})
 
 
 const port = process.env.PORT || 8081;
