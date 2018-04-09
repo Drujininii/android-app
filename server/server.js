@@ -2,8 +2,8 @@
 
 const express = require('express');
 const morgan = require('morgan');
-const Controller = require('../app/controllers/controllers');
-const controller = new Controller();
+// const Controller = require('../app/controllers/controllers');
+// const controller = new Controller();
 const bodyParser = require('body-parser');
 
 
