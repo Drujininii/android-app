@@ -1,5 +1,6 @@
 let button = document.getElementById('submitButton');
 let form = document.getElementById('productForm');
+let answerField = document.getElementById('answerField');
 
 
 button.addEventListener('click', (event) => {
@@ -17,7 +18,20 @@ button.addEventListener('click', (event) => {
     const body = {
         products: productsArray,
     }
-    fetchPost('/getRecipe', body)
+    fetchPost('getRecipe', body)
+    .then((resp) => {
+        console.log('resp ok');
+        console.dir(answerField);
+        resp.json()
+        .then((body) => {
+            let innerText = body.reduce((str, elem) => {
+                str += `product: ${elem.recipe_name}  recipe: ${elem.recipe_text} \n`;
+                return str;
+            }, '');
+            answerField.innerText = innerText;
+        })
+        
+    })
     .catch((err) => {
         console.log(err);
     });
@@ -25,7 +39,7 @@ button.addEventListener('click', (event) => {
 
 console.log('script run');
 
-const backendUrl = 'http://localhost:8081';
+const backendUrl = `${window.location.href}`;
 function fetchPost(address, body) {
     console.log('fetch post');
     const url = backendUrl + address;
@@ -34,7 +48,7 @@ function fetchPost(address, body) {
     myHeaders.set('Content-Type', 'application/json; charset=utf-8');
     return fetch(url, {
         method: 'POST',
-        mode: 'same-origin',
+        mode: 'cors',
         credentials: 'include',
         body: JSON.stringify(body),
         headers: myHeaders

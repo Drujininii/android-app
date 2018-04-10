@@ -31,8 +31,9 @@ class Controller {
         console.log('get recipe');
         const requestJson = req.body;
         console.log('request json', requestJson);
-        const response = await models.getRecipe(requestJson.products);
+        const response = JSON.stringify(await models.getRecipe(requestJson.products));
         console.log('respons from db', response);
+        return response;
     }
 }
 

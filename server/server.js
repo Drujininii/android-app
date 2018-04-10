@@ -27,8 +27,13 @@ app.all('*', async (req, resp) => {
     console.log(req.url);
     const response = await controller.handleReq(req);
     console.log('response', response);
+    resp.header("Access-Control-Allow-Origin", "*");
+    resp.header("Access-Control-Allow-Headers", "X-Requested-With");
+    resp.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length');
     resp.send(response);
 })
+
+
 
 
 const port = process.env.PORT || 8081;
