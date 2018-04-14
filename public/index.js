@@ -24,6 +24,7 @@ button.addEventListener('click', (event) => {
         console.dir(answerField);
         resp.json()
         .then((body) => {
+            console.dir(typeof body, body);
             let innerText = body.reduce((str, elem) => {
                 str += `product: ${elem.recipe_name}  recipe: ${elem.recipe_text} \n`;
                 return str;
