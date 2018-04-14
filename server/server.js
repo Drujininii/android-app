@@ -30,6 +30,7 @@ app.all('*', async (req, resp) => {
     resp.header("Access-Control-Allow-Origin", "*");
     resp.header("Access-Control-Allow-Headers", "X-Requested-With");
     resp.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length');
+    resp.header('Content-Type: application/json; charset=utf-8')
     resp.send(response);
 })
 
