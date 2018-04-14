@@ -30,10 +30,20 @@ class Controller {
     async getRecipe(req) {
         console.log('get recipe');
         const requestJson = req.body;
-        console.log('request json', requestJson);
-        const response = JSON.stringify(await models.getRecipe(requestJson.products));
-        console.log('respons from db', response);
-        return response;
+
+        const recipe = {
+            products: {
+                doshic: '1 упаковка',
+                whater: "500 мл"
+            },
+            text: 'Откройте упаковку, залейте кипятком'
+        }
+        // console.log('request json', requestJson);
+        // const response = JSON.stringify(await models.getRecipe(requestJson.products));
+        // console.log('respons from db', response);
+    
+        // return response;
+        return recipe;
     }
 }
 
