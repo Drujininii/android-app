@@ -1,5 +1,5 @@
-const Models = require('../models/models.js');
-const models = new Models();
+// const Models = require('../models/models.js');
+// const models = new Models();
 
 class Controller {
     constructor() {
