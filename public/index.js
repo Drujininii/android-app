@@ -26,7 +26,12 @@ button.addEventListener('click', (event) => {
         .then((body) => {
             console.dir(typeof body, body);
             let innerText = body.reduce((str, elem) => {
-                str += `product: ${elem.recipe_name}  recipe: ${elem.recipe_text} \n`;
+                let products = '';
+                for (let prod in elem.products) {
+                    products += `${prod}: ${elem.products[prod]},\n`;
+                }
+                console.log(products);
+                str += `{name: ${elem.name}} \n{products: \n${products}} \n{text: ${elem.text}} \n`;
                 return str;
             }, '');
             answerField.innerText = innerText;

@@ -31,13 +31,14 @@ class Controller {
         console.log('get recipe');
         const requestJson = req.body;
 
-        const recipe = {
+        const recipe = [{
+            name: 'student pack',
             products: {
                 doshic: '1 упаковка',
                 whater: "500 мл"
             },
             text: 'Откройте упаковку, залейте кипятком'
-        }
+        }]
         // console.log('request json', requestJson);
         // const response = JSON.stringify(await models.getRecipe(requestJson.products));
         // console.log('respons from db', response);
