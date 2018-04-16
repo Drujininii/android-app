@@ -30,7 +30,9 @@ class Controller {
     async getRecipe(req) {
         console.log('get recipe');
         const requestJson = req.body;
-        console.log(requestJson);
+        console.log('android request body', requestJson);
+
+
 
         const recipe = [{
             name: 'student pack',
