@@ -30,6 +30,7 @@ class Controller {
     async getRecipe(req) {
         console.log('get recipe');
         const requestJson = req.body;
+        console.log(requestJson);
 
         const recipe = [{
             name: 'student pack',
