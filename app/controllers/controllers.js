@@ -32,8 +32,6 @@ class Controller {
         const requestJson = req.body;
         console.log('android request body', requestJson);
 
-
-
         const recipe = [{
             name: 'student pack',
             products: {
@@ -41,7 +39,17 @@ class Controller {
                 whater: "500 мл"
             },
             text: 'Откройте упаковку, залейте кипятком'
+        }, {
+            name: 'android phone',
+            products: {
+                govno: '1 кг',
+                palki: '3 штуки'
+            },
+            text: `Возьмите 50 тысяч от своей запрлаты. Пойдите в мтс, купите на эти деньги говна и палок.
+            Перемешайте говно и палки. Получите мобильный телефон. Теперь у вас есть телефон на платформе андройд`
         }]
+
+
         // console.log('request json', requestJson);
         // const response = JSON.stringify(await models.getRecipe(requestJson.products));
         // console.log('respons from db', response);
