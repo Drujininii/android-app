@@ -17,13 +17,11 @@ class Models {
 
     getRecipe(products) {
         console.log('products array', products);
-        console.log('db', db);
         return db.any(`
-            SELECT * FROM app_recipes
-            WHERE recipe_name IN ($1:csv)
+            SELECT recipe_id, recipe_name, recipe_text, recipe_products FROM app_recipes
+            WHERE recipe_products <@ ($1::citext[])
             `, [products])
             .then(function (data) {
-                console.log("DATA:", data);
                 return data;
             })
             .catch(function (error) {

@@ -24,14 +24,18 @@ button.addEventListener('click', (event) => {
         console.dir(answerField);
         resp.json()
         .then((body) => {
-            console.dir(typeof body, body);
+            console.log(typeof body, body);
             let innerText = body.reduce((str, elem) => {
                 let products = '';
                 for (let prod in elem.products) {
                     products += `${prod}: ${elem.products[prod]},\n`;
                 }
-                console.log(products);
-                str += `{name: ${elem.name}} \n{products: \n${products}} \n{text: ${elem.text}} \n`;
+                str += `{\n____recipe_name: ${elem.recipe_name}\n} 
+                {
+                    ____recipe_products: \n________[${elem.recipe_products}]
+                } \n{
+                    ____recipe_text: ${elem.recipe_text}
+                } \n\n`;
                 return str;
             }, '');
             answerField.innerText = innerText;
