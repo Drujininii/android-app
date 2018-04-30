@@ -32,31 +32,31 @@ class Controller {
         const requestJson = req.body;
         console.log('android request body', requestJson);
 
-        // const recipe = [{
-        //     name: 'student pack',
-        //     products: {
-        //         doshic: '1 упаковка',
-        //         whater: "500 мл"
-        //     },
-        //     text: 'Откройте упаковку, залейте кипятком'
-        // }, {
-        //     name: 'android phone',
-        //     products: {
-        //         govno: '1 кг',
-        //         palki: '3 штуки'
-        //     },
-        //     text: `Возьмите 50 тысяч от своей запрлаты. Пойдите в мтс, купите на эти деньги говна и палок.
-        //     Перемешайте говно и палки. Получите мобильный телефон. Теперь у вас есть телефон на платформе андройд`
-        // }]
+        const recipe = [{
+            name: 'student pack',
+            products: {
+                doshic: '1 упаковка',
+                whater: "500 мл"
+            },
+            text: 'Откройте упаковку, залейте кипятком'
+        }, {
+            name: 'android phone',
+            products: {
+                govno: '1 кг',
+                palki: '3 штуки'
+            },
+            text: `Возьмите 50 тысяч от своей запрлаты. Пойдите в мтс, купите на эти деньги говна и палок.
+            Перемешайте говно и палки. Получите мобильный телефон. Теперь у вас есть телефон на платформе андройд`
+        }]
 
 
         console.log('request json', requestJson);
-        let response = await models.getRecipe(requestJson.products)
-        response = this.convertProductsToArray(response);
+        // let response = await models.getRecipe(requestJson.products)
+        // response = this.convertProductsToArray(response);
         
-        const responseJson = JSON.stringify(response);
-        return responseJson;
-        // return recipe;
+        // const responseJson = JSON.stringify(response);
+        // return responseJson;
+        return recipe;
     }
 
     convertProductsToArray(response) {
