@@ -34,17 +34,17 @@ class Controller {
 
         const recipe = [{
             recipe_name: 'student pack',
-            recipe_products: {
-                doshic: '1 упаковка',
-                whater: "500 мл"
-            },
+            recipe_products: [
+               'дошик',
+               'вода'
+        ],
             recipe_text: 'Откройте упаковку, залейте кипятком'
         }, {
             recipe_name: 'android phone',
-            recipe_products: {
-                govno: '1 кг',
-                palki: '3 штуки'
-            },
+            recipe_products: [
+                'говно',
+                'палки'
+            ],
             recipe_text: `Возьмите 50 тысяч от своей запрлаты. Пойдите в мтс, купите на эти деньги говна и палок.
             Перемешайте говно и палки. Получите мобильный телефон. Теперь у вас есть телефон на платформе андройд`
         }]
