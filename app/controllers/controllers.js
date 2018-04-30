@@ -33,19 +33,19 @@ class Controller {
         console.log('android request body', requestJson);
 
         const recipe = [{
-            name: 'student pack',
-            products: {
+            recipe_name: 'student pack',
+            recipe_products: {
                 doshic: '1 упаковка',
                 whater: "500 мл"
             },
-            text: 'Откройте упаковку, залейте кипятком'
+            recipe_text: 'Откройте упаковку, залейте кипятком'
         }, {
-            name: 'android phone',
-            products: {
+            recipe_name: 'android phone',
+            recipe_products: {
                 govno: '1 кг',
                 palki: '3 штуки'
             },
-            text: `Возьмите 50 тысяч от своей запрлаты. Пойдите в мтс, купите на эти деньги говна и палок.
+            recipe_text: `Возьмите 50 тысяч от своей запрлаты. Пойдите в мтс, купите на эти деньги говна и палок.
             Перемешайте говно и палки. Получите мобильный телефон. Теперь у вас есть телефон на платформе андройд`
         }]
 
