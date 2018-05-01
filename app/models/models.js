@@ -4,7 +4,7 @@ if (process.env.NODE_ENV === 'develop') {
     console.log('devepol');
     db = pgp("postgres://igor:qwerty@localhost:5432/android_app");
 } else {
-    db = pgp(process.env.DATABASE_URL);
+    db = pgp("postgres://igor:qwerty@localhost:5432/android_app");
 }
 
 class Models {
